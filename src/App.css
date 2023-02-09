@@ -72,21 +72,21 @@
   border-bottom-color: transparent;
 }
 .header span div:nth-child(2) {
-  width: 160px;
+  width: 100px;
   height: 200px;
   background-color: #f5f5f5;
   border-radius: 50%;
-  left: 25vh;
+  left: 39vh;
   transform: rotate(50deg);
-  top: -66px;
+  top: -52px;
 }
 .header span div:last-child {
-  width: 160px;
+  width: 100px;
   height: 200px;
   background-color: #f5f5f5;
   border-radius: 50%;
-  left: 5px;
-  transform: rotate(100deg);
-  bottom: -66px;
+  left: -40px;
+  transform: rotate(400deg);
+  bottom: -132px;
 }
 /* end header styles */
