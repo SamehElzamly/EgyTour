@@ -1,7 +1,11 @@
 export function Header(){
     return(
-        <>
+        <>    
+        <div></div>    
         <span>
+            <div ></div>
+            <div ></div>
+            <div ></div>
         </span>
         <header>
             <h1>EgyTour</h1>
