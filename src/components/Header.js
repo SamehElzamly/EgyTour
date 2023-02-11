@@ -4,7 +4,7 @@ export function Header(){
     return(
         <>    
         <div></div>    
-        <span>
+        <span >
             <div ></div>
             <div ></div>
             <div ></div>
@@ -14,9 +14,10 @@ export function Header(){
         <header>
             <h1>EgyTour</h1>
             <ul>
-                <li><a href="/">Trips</a></li>
-                <li><a href="/">AboutUs</a></li>
                 <li><a href="/">Home</a></li>
+                <li><a href="#Trips">Discover</a></li>
+                <li><a href="/">How it works</a></li>
+                <li><a href="/">AboutUs</a></li>
             </ul>
             <div className="signIn">
                 <button>Log In</button>
