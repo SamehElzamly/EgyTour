@@ -17,7 +17,7 @@ export function Header(){
                 <li><a href="/">Home</a></li>
                 <li><a href="#Trips">Discover</a></li>
                 <li><a href="/">How it works</a></li>
-                <li><a href="/">AboutUs</a></li>
+                <li><a href="#AboutUs">AboutUs</a></li>
             </ul>
             <div className="signIn">
                 <button>Log In</button>
