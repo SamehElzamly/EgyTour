@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocationDot ,faCalendarDays,faUsers,faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
+import { faLocationDot ,faCalendarDays,faUsers,faMagnifyingGlass,faPlane} from '@fortawesome/free-solid-svg-icons'
 export function Header(){
     return(
         <>    
@@ -12,7 +12,10 @@ export function Header(){
             <div ></div>
         </span>
         <header>
-            <h1>EgyTour</h1>
+            <div className='logo'>
+                <FontAwesomeIcon icon={faPlane}/>
+                <h1>EgyTour</h1>
+            </div>
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="#Trips">Discover</a></li>

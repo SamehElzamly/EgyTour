@@ -1,6 +1,7 @@
 import { Header } from './components/Header';
 import { Trips } from './components/Trips';
 import { AboutUs } from './components/AboutUs';
+import { Footer } from './components/Footer';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Trips/>
         <AboutUs/>
       </section>
+      <Footer/>
     </div>
   );
 }

@@ -9,13 +9,31 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--b2--);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+.logo {
+  display: flex;
+  color: var(--g3--);
+  align-items: center;
+  position: relative;
+}
+.logo svg {
+  transform: rotate(-45deg);
+  margin-right: 20px;
+}
+.logo::after {
+  content: "";
+  position: absolute;
+  left: 25px;
+  width: 2px;
+  height: 40%;
+  background-color: var(--b2--);
+}
 .button {
   cursor: pointer;
   width: 120px;
@@ -27,6 +45,13 @@ code {
   align-items: center;
   background-color: var(--white--);
   font-weight: 500;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: var(--b2--);
 }
 :root {
   --g1--: #c7f9cc;
