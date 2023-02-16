@@ -3,28 +3,28 @@
   height: 80vh;
   background-size: cover;
 }
-.header header {
+#header {
   position: relative;
   margin: 0 5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.header ul {
+ul {
   display: flex;
   z-index: 2;
 }
-.header ul li {
+ul li {
   margin-left: 25px;
 }
-.header ul li a {
+ul li a {
   font-size: 18px;
   font-weight: 500;
 }
-.header .signIn {
+.signIn {
   z-index: 2;
 }
-.header button {
+button {
   border: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -32,11 +32,11 @@
   font-weight: bold;
   border-radius: 20px;
 }
-.header button:first-child {
+#header button:first-child {
   color: var(--white--);
   background-color: var(--g3--);
 }
-.header button:last-child {
+#header button:last-child {
   color: var(--g3--);
   background-color: #f5f5f5;
 }
@@ -134,6 +134,39 @@
   background-color: var(--white--);
   box-shadow: 0 0 15px #00000061;
 }
+
+.header .navbar li:nth-child(2) input {
+  position: absolute;
+  transform: translate(-17%, 12px) scale(4, 2);
+  height: 22px;
+  border: none;
+  opacity: 0;
+  width: 26px;
+  font-size: 22px;
+}
+.header .navbar li input,
+.header .navbar select {
+  position: absolute;
+  border-radius: 5px;
+  height: 30px;
+  width: 100px;
+  transform: translateY(-100%);
+  border: 1px solid var(--g1--);
+  color: #00000061;
+  z-index: 3;
+}
+.header .navbar li:nth-child(3) input:focus-within {
+  border: 1px solid var(--g1--);
+}
+.header .navbar label {
+  position: relative;
+  left: 19px;
+  font-weight: bold;
+}
+.header .navbar .fa-calendar-days {
+  position: absolute;
+  left: 0;
+}
 .header .navbar svg {
   color: var(--g3--);
 }
@@ -149,7 +182,7 @@
 }
 .header .navbar ul li {
   position: relative;
-  cursor: pointer;
+  cursor: default;
 }
 .header .navbar ul li::after {
   content: "";
@@ -232,42 +265,18 @@
   margin: 40px 0;
 }
 #Trips .tripsBody .card {
-  position: relative;
   width: 220px;
   height: 290px;
-  box-shadow: 0 0 10px #00000031;
   border-radius: 20px;
   margin: 10px;
-  overflow: hidden;
 }
 #Trips .tripsBody .card img {
   width: 100%;
 }
-#Trips .tripsBody .card svg {
-  position: absolute;
-  padding: 10px;
-  border-radius: 50%;
-  top: 10px;
-}
-#Trips .tripsBody .card svg:nth-child(2) {
-  left: 10px;
-  color: var(--white--);
-  background-color: var(--g3--);
-}
-#Trips .tripsBody .card svg:nth-child(3) {
-  right: 10px;
-  color: var(--black--);
-  background-color: var(--white--);
-  cursor: pointer;
-}
+
 #Trips .tripsBody .card div {
-  background-color: var(--white--);
   width: 200px;
   height: 60px;
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  justify-content: space-between;
   padding: 0 10px;
 }
 #Trips .tripsFoot {
@@ -434,3 +443,76 @@ footer .foot svg {
   color: var(--g3--);
 }
 /* end footer styles */
+/* start search page styles */
+
+#searchForm {
+  position: absolute;
+  top: 100px;
+  width: 85%;
+  left: 15%;
+}
+.searchPage form input {
+  border-radius: 5px;
+  border: 1px solid var(--b2--);
+  color: var(--b2--);
+}
+.searchPage form #search {
+  width: 70%;
+  height: 35px;
+  font-size: 18px;
+}
+.searchPage .cards {
+  width: 90vw;
+  margin: 100px 5vw;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+.searchPage .card {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  width: 90vw;
+  height: 400px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.searchPage .card svg:nth-child(3) {
+  left: calc(50% - 40px);
+}
+.searchPage .card img {
+  width: 50%;
+  height: 100%;
+}
+.searchPage .card > p {
+  width: calc(50% - 20px);
+  font-weight: normal;
+}
+.searchPage .card > div {
+  padding: 0 30px;
+  border-top-right-radius: 40px;
+  width: 150px;
+}
+.searchPage .card form {
+  width: calc(50% - 40px);
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+.searchPage .card form input {
+  height: 25px;
+  width: -webkit-fill-available;
+}
+.searchPage .card form div {
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+}
+
+/* end search page styles */

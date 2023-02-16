@@ -3,7 +3,7 @@ import boat from '../public/images/boat.jpg';
 import dahab from '../public/images/dahab.jpg'
 import santCathrine from '../public/images/santCathrine.jpg'
 import snorkling from '../public/images/snorkling.jpg'
-import {faLocationDot,faChevronDown,faArrowRight,faArrowLeft,faVanShuttle,faCalendarDays} from '@fortawesome/free-solid-svg-icons';
+import {faLocationDot,faChevronDown,faArrowRight,faArrowLeft,faVanShuttle} from '@fortawesome/free-solid-svg-icons';
 import {faHeart} from '@fortawesome/free-regular-svg-icons'
 export function Trips(){
     return(
@@ -16,8 +16,8 @@ export function Trips(){
             <div className="tripsBody">
                 <div className="card">
                     <img src={dahab} alt="dahab"/>
-                        <FontAwesomeIcon icon={faVanShuttle}/>
-                        <FontAwesomeIcon icon={faHeart}/>
+                    <FontAwesomeIcon icon={faVanShuttle}/>
+                    <FontAwesomeIcon icon={faHeart}/>
                     <div>
                             <h3>Dahab</h3>
                             <h3>20$</h3>

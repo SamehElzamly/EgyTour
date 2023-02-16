@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&family=Oleo+Script+Swash+Caps:wght@700&family=Open+Sans:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: "Cairo", sans-serif;
@@ -11,6 +14,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: var(--b2--);
 }
+:root {
+  --g1--: #c7f9cc;
+  --g2--: #80ed99;
+  --g3--: #57cc99;
+  --b1--: #38a3a5;
+  --b2--: #22577a;
+  --black--: #000;
+  --white--: #fff;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -21,6 +33,7 @@ code {
   color: var(--g3--);
   align-items: center;
   position: relative;
+  cursor: pointer;
 }
 .logo svg {
   transform: rotate(-45deg);
@@ -53,12 +66,47 @@ a {
   text-decoration: none;
   color: var(--b2--);
 }
-:root {
-  --g1--: #c7f9cc;
-  --g2--: #80ed99;
-  --g3--: #57cc99;
-  --b1--: #38a3a5;
-  --b2--: #22577a;
-  --black--: #000;
-  --white--: #fff;
+.activePage {
+  color: var(--b1--);
+}
+.fixedHeader {
+  position: fixed !important;
+  z-index: 3;
+  background-color: #f5f5f5eb;
+  width: 90vw;
+  padding: 0 5vw;
+  margin: 0 !important;
+}
+.staticHeaderInfo {
+  margin: 135px 5vw !important;
+}
+.card {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px #00000031;
+}
+.card svg {
+  position: absolute;
+  padding: 10px;
+  border-radius: 50%;
+  top: 10px;
+}
+.card svg:nth-child(2) {
+  left: 10px;
+  color: var(--white--);
+  background-color: var(--g3--);
+}
+.card svg:nth-child(3) {
+  right: 10px;
+  color: var(--black--);
+  background-color: var(--white--);
+  cursor: pointer;
+}
+.card > div {
+  background-color: var(--white--);
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

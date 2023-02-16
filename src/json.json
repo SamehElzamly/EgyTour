@@ -1,0 +1,80 @@
+{
+    "trips":[
+{
+    "id":1,
+    "name":"Dahab",
+    "price":20,
+    "img":"https://c1.wallpaperflare.com/preview/171/977/172/dahab-blue-hole-beach-egypt-sky-sea.jpg",
+    "details":"The trip begines at 7:00 am and ends at 4:00 pm "
+},
+{
+    "id":2,
+    "name":"Sant Cathrine",
+    "price":80,
+    "img":"https://c1.wallpaperflare.com/preview/144/815/805/egypt-sinai-st-catherine-s-monastery-mountain.jpg",
+    "details":"The trip begines at 7:00 am and ends after 36 hours "
+},
+{
+    "id":3,
+    "name":"Ras Mohammed",
+    "price":30,
+    "img":"https://th.bing.com/th/id/R.f2362298a90a90061d7e845bf92b0bec?rik=9rKGjiN0HP9JIQ&riu=http%3a%2f%2fwww.beach-on-map.com%2fimg%2f2%2fegypt-sharm-el-sheikh-ras-mohammed-beach-snorkelling-orig.jpg&ehk=%2fi%2fA4cVICj2cb%2fsY4tXK47Vgcu7eRyD%2byl84S5m0up0%3d&risl=&pid=ImgRaw&r=0",
+    "details":"The trip begines at 7:00 am and ends at 5:00 pm "
+},
+{
+    "id":4,
+    "name":"Blue hole",
+    "price":30,
+    "img":"https://c4.wallpaperflare.com/wallpaper/606/257/211/nature-landscape-sea-great-blue-hole-wallpaper-preview.jpg",
+    "details":"The trip begines at 7:00 am and ends at 4:00 pm it required divig leiscence"
+},
+{
+    "id":5,
+    "name":"Aqua park",
+    "price":35,
+    "img":"https://c1.wallpaperflare.com/preview/504/348/978/aqua-park-marmaris-slides-pool.jpg",
+    "details":"The trip begines at 7:00 am and ends at 4:00 pm "
+},
+{
+        "id":6,
+    "name":"Pyramids",
+    "price":60,
+    "img":"https://c4.wallpaperflare.com/wallpaper/981/788/30/egypt-pyramid-desert-old-building-wallpaper-preview.jpg",
+    "details":"The trip begines at 7:00 am and ends after 36 hours by bus"
+},
+{
+        "id":7,
+    "name":"Pyramids",
+    "price":80,
+    "img":"https://c0.wallpaperflare.com/preview/920/698/321/egypt-cairo-building-night.jpg",
+    "details":"The trip begines at 7:00 am and ends after 36 hours by plane"
+},
+{
+        "id":8,
+    "name":"Luxor",
+    "price":80,
+    "img":"https://c1.wallpaperflare.com/preview/342/518/443/egypt-temple-temple-complex-pillar.jpg",
+    "details":"The trip begines at 7:00 am and ends after 36 hours by plane"
+},
+{
+    "id":9,
+    "name":"Petra",
+    "price":60,
+    "img":"https://c4.wallpaperflare.com/wallpaper/246/806/550/nature-landscape-desert-sand-wallpaper-preview.jpg",
+    "details":"The trip begines at 7:00 am and ends after 36 hours"
+},
+{
+    "id":10,
+    "name":"Moto safari",
+    "price":40,
+    "img":"https://c1.wallpaperflare.com/preview/497/585/301/buggy-quad-buggy-quad-bike-car.jpg",
+    "details":"The trip begines at 7:00 am and ends at 4:00 pm "
+},
+{
+    "id":11,
+    "name":"Dolphinarium",
+    "price":40,
+    "img":"https://c1.wallpaperflare.com/preview/952/300/920/dolphins-preview-delfin-herd.jpg",
+    "details":"The trip begines at 7:00 am and ends at 4:00 pm "
+}]
+}

@@ -12,7 +12,7 @@ export function AboutUs(){
                     <button className='button'>Get Started</button>
                 </div>
                 <div>
-                    <img src={ill2}/>
+                    <img src={ill2} alt='travel car'/>
                 </div>
             </div>
             <div className="aboutUsBody">
@@ -26,7 +26,7 @@ export function AboutUs(){
                     </div>
                 </div>
                 <div>
-                    <img src={ill1}/>
+                    <img src={ill1} alt='traveler'/>
                 </div>
             </div>
         </div>
