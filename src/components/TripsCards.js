@@ -20,7 +20,7 @@ export function TripsCards(props){
                         <form>
                             <div>
                                 <label>number of tickets</label>
-                                <input type='number' name='ticketsNumber' id="ticketsNumber"/>
+                                <input type='number' name='ticketsNumber' id="ticketsNumber" placeholder="number"/>
                             </div>
                             <button>Book</button>
                         </form>

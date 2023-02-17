@@ -9,6 +9,9 @@ export function AboutUs(){
                 <div>
                     <h2>An <span>easier</span> way to manage your trips</h2>
                     <p>We make it super easy to schedule, organize and travel with friends or family. Trips is free — and available to use no matter where you book.</p>
+                    <p>We are here to make it easy for you to book trips and enjoy your stay in Sharm Elsheikh.</p>
+                <p>all you have to do is explore our availble trips and book one.</p>
+                <p>we will contact you to confirm the booking process and discussing trip details.</p>
                     <button className='button'>Get Started</button>
                 </div>
                 <div>

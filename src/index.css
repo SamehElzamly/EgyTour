@@ -49,8 +49,6 @@ code {
 }
 .button {
   cursor: pointer;
-  width: 120px;
-  height: 50px;
   border-radius: 25px;
   border: 1px solid var(--g1--);
   display: flex;
@@ -58,6 +56,9 @@ code {
   align-items: center;
   background-color: var(--white--);
   font-weight: 500;
+}
+.button p {
+  margin: 0 5px;
 }
 li {
   list-style: none;
@@ -109,4 +110,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+h1 {
+  color: var(--g3--);
 }

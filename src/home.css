@@ -23,20 +23,18 @@ ul li a {
 }
 .signIn {
   z-index: 2;
+  display: flex;
 }
-button {
-  border: none;
+button,
+.button {
   padding: 10px 20px;
-  cursor: pointer;
-  margin: 0 10px;
-  font-weight: bold;
-  border-radius: 20px;
+  margin: 0 4px;
 }
-#header button:first-child {
+#header .button:first-child {
   color: var(--white--);
   background-color: var(--g3--);
 }
-#header button:last-child {
+#header .button:last-child {
   color: var(--g3--);
   background-color: #f5f5f5;
 }
@@ -261,12 +259,12 @@ button {
   justify-content: space-between;
   overflow: hidden;
   flex-wrap: wrap;
-  height: 310px;
+  height: 226px;
   margin: 40px 0;
 }
 #Trips .tripsBody .card {
   width: 220px;
-  height: 290px;
+  height: 207px;
   border-radius: 20px;
   margin: 10px;
 }
@@ -288,8 +286,11 @@ button {
   margin: 40px 0;
 }
 #Trips .tripsFoot button {
-  color: var(--g3--);
   font-weight: bold;
+  width: 100px;
+  height: 40px;
+  border: 1px solid;
+  color: var(--g3--);
 }
 /* end trips styles */
 /* start aboutUs styles */
@@ -303,7 +304,7 @@ button {
   height: 45vh;
   border-radius: 20px;
   display: flex;
-  padding: 5vw;
+  padding: 0 5vw 80px;
 }
 #AboutUs .aboutUsHead > div:first-child,
 #AboutUs .aboutUsBody > div:first-child {
@@ -321,7 +322,7 @@ button {
   color: #00000061;
 }
 #AboutUs .aboutUsHead > div:first-child * {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 #AboutUs .aboutUsHead > div:last-child,
 #AboutUs .aboutUsBody > div:last-child {
@@ -399,7 +400,11 @@ footer ul {
   padding: 0 15px;
 }
 footer ul li {
-  margin: 20px 0;
+  margin: 5px 0;
+}
+footer div > div:nth-child(2) ul {
+  display: flex;
+  flex-direction: column;
 }
 footer div > div:nth-child(3) div {
   display: flex;
@@ -516,3 +521,104 @@ footer .foot svg {
 }
 
 /* end search page styles */
+/* start login  page styles */
+.logIn,
+.signUp {
+  width: 80vw;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  margin: 5vh 5vw;
+  box-shadow: 0 0 10px #00000031;
+  column-gap: 20px;
+  padding: 5vh 5vw;
+}
+.leftSide form,
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.leftSide {
+  width: calc(40vw - 10px);
+  height: 400px;
+}
+.leftSide > * {
+  margin: 0;
+}
+.leftSide .googleLogIn {
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #00000031;
+  overflow: hidden;
+}
+.leftSide form::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #00000031;
+  top: -15px;
+}
+.leftSide form::before {
+  position: absolute;
+  top: -23px;
+  content: "OR";
+  left: 50%;
+  transform: translate(-50%);
+  color: #00000031;
+  z-index: 2;
+  background-color: var(--white--);
+}
+.leftSide form {
+  position: relative;
+  align-items: start;
+  margin-top: 20px;
+}
+.leftSide form input {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-left: 2px solid var(--g3--);
+  color: var(--b2--);
+  margin: 5px 0;
+}
+.leftSide form input[type="submit"] {
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.leftSide a {
+  font-weight: bold;
+  color: var(--g3--);
+}
+.leftSide p {
+  color: #00000061;
+}
+.logIn .rightSide {
+  width: calc(40vw - 10px);
+  height: 400px;
+  background-image: url("./public/images/undraw_access_account_re_8spm.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+/* end login page styles */
+/* start signup  page styles */
+.signUp {
+  height: 600px;
+}
+.signUp .rightSide,
+.signUp .leftSide {
+  height: 600px;
+  width: calc(40vw - 10px);
+}
+.signUp .rightSide {
+  background-image: url("./public/images/undraw_login_re_4vu2.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* end signup page styles */ ;

@@ -1,11 +1,30 @@
 import { Header } from './components/Header';
-import { Trips } from './components/Trips';
+import {Trips} from './components/Trips'
 import { AboutUs } from './components/AboutUs';
 import { Footer } from './components/Footer';
 import './home.css';
 import { Routes,Route } from 'react-router-dom';
 import { Search } from './components/Search';
+import { useDispatch,useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { addTrips } from './store/tripsSlice';
+import { LogIn } from './components/LogIn';
+import { SignUp } from './components/SignUp';
+
+
 function App() {
+  // load trips from api
+    const dispatch=useDispatch();
+    let api='http://localhost:3001/trips'
+    useEffect(()=>{
+        fetch(api)
+        .then(res=> {return res.json()})
+        .then(res=>{
+            dispatch(addTrips(res))
+        }
+            )
+        .catch(err=>console.log(err))
+    },[])
   //add trip to favourite
   let trips=document.querySelectorAll('.card svg:nth-child(3)')
   trips.forEach(e=>{
@@ -37,7 +56,7 @@ function App() {
                 }
               /////////////////// 
               }}>
-              <Trips/>
+                <Trips/>
               <AboutUs/>
             </section>
             <Footer/>
@@ -45,6 +64,8 @@ function App() {
         </>
       }/>
       <Route path='/search' element={<Search/>}/>
+      <Route path='/log in' element={<LogIn/>} />
+      <Route path='/sign up' element={<SignUp/>} />
     </Routes>
   );
 }

@@ -3,9 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot ,faCalendarDays,faUsers,faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
 import { HeadGlobal } from './HeadGlobal';
+import { useSelector } from 'react-redux';
 export function Header(){
     const [i,setIValue]=useState(1)
     const [v,setvValue]=useState(1)
+    const trips=useSelector(state=>state.tripsSlice)
+
     function travelersNum(){
         if(i%2===0)
             {
@@ -22,19 +25,15 @@ export function Header(){
             {
                 return(
                 <select id='selectTrip' >
-                    <option value={'cantCathrine'}>
-                        santCathrine 40$
-                    </option>
-                    <option value={'cantCathrine'}>
-                        dahab 30$
-                    </option>
-                    <option value={'cantCathrine'}>
-                        ras mohammed
-                        40$
-                    </option>
-                    <option value={'cantCathrine'}>
-                        safari 30$
-                    </option>
+                    {
+                        trips.map((trip)=>{
+                            return(
+                                <option value={trip.name} key={trip.id}>
+                                    {trip.name} {trip.price}$
+                                </option>
+                                )
+                        })
+                    }
                 </select>
             );
             

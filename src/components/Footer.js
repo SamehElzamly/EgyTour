@@ -5,7 +5,7 @@ import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
 export function Footer(){
     return(
-        <footer >
+        <footer id="Footer">
             <div>
                 <div>
                     <div className='logo'>
@@ -18,8 +18,8 @@ export function Footer(){
                     <h2>Service</h2>
                     <ul>
                         <li><a href="#AboutUs">About Us</a></li>
-                        <li><a href="/">Contact Us</a></li>
-                        <li><a href='/'>Services</a></li>
+                        <li><a href="#Footer">Contact Us</a></li>
+                        <li><a href='#Trips'>Services</a></li>
                     </ul>
                 </div>
                 <div>
