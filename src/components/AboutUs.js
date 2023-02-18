@@ -2,6 +2,8 @@ import ill1 from '../public/images/undraw_travel_mode_re_2lxo.svg'
 import ill2 from '../public/images/undraw_trip_re_f724.svg'
 import {faAngleRight,faAngleLeft} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
+
 export function AboutUs(){
     return(
         <div id='AboutUs'>
@@ -12,7 +14,7 @@ export function AboutUs(){
                     <p>We are here to make it easy for you to book trips and enjoy your stay in Sharm Elsheikh.</p>
                 <p>all you have to do is explore our availble trips and book one.</p>
                 <p>we will contact you to confirm the booking process and discussing trip details.</p>
-                    <button className='button'>Get Started</button>
+                    <Link to='/log in' className='button'>Get Started</Link>
                 </div>
                 <div>
                     <img src={ill2} alt='travel car'/>

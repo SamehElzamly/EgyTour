@@ -21,6 +21,9 @@ ul li a {
   font-size: 18px;
   font-weight: 500;
 }
+#header ul li a:hover {
+  color: var(--b1--);
+}
 .signIn {
   z-index: 2;
   display: flex;
@@ -33,10 +36,12 @@ button,
 #header .button:first-child {
   color: var(--white--);
   background-color: var(--g3--);
+  border: none;
 }
 #header .button:last-child {
   color: var(--g3--);
   background-color: #f5f5f5;
+  border: none;
 }
 .header > span {
   background-image: url("./public/images/mobile.jpg");
@@ -237,8 +242,32 @@ button,
   color: #00000061;
   font-size: 15px;
 }
-
+#Trips .tripsHead > div:nth-child(2) {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
 #Trips .tripsHead > div:nth-child(2) svg:first-child {
+  color: var(--g3--);
+}
+#Trips .tripsHead ul {
+  display: none;
+  position: absolute;
+  width: 182px;
+  flex-direction: column;
+  height: 200px;
+  background-color: #f5f5f5;
+  padding: 0;
+  box-shadow: 1px 1px 10px #00000021;
+}
+#Trips .tripsHead ul li {
+  padding: 10px 0;
+  position: relative;
+  border-bottom: 1px solid var(--b2--);
+  margin: 0;
+}
+#Trips .tripsHead ul li:hover {
+  background-color: var(--b2--);
   color: var(--g3--);
 }
 #Trips .tripsHead > div:last-child {
@@ -248,10 +277,11 @@ button,
 }
 #Trips .tripsHead > div:last-child svg {
   padding: 10px;
-  border: 1px solid var(--g1--);
+  background-color: var(--g3--);
   border-radius: 50%;
   margin-left: 20px;
   cursor: pointer;
+  color: var(--white--);
 }
 #Trips .tripsBody {
   display: flex;
@@ -310,9 +340,10 @@ button,
 #AboutUs .aboutUsBody > div:first-child {
   width: 40vw;
 }
-#AboutUs .aboutUsHead button {
+#AboutUs .aboutUsHead a {
   background-color: var(--g3--);
   color: var(--white--);
+  width: 100px;
 }
 #AboutUs .aboutUsHead span {
   color: var(--g3--);
@@ -395,6 +426,9 @@ footer h2 {
 }
 footer a {
   color: var(--white--);
+}
+footer a:hover {
+  color: var(--g2--);
 }
 footer ul {
   padding: 0 15px;
@@ -522,16 +556,32 @@ footer .foot svg {
 
 /* end search page styles */
 /* start login  page styles */
+.signUpPage,
+.logInPage {
+  padding: 5vh 5vw;
+  max-height: 100vh;
+  background-color: #f5f5f5;
+}
+.logInPage {
+  min-height: calc(400px + 10vh);
+  padding-bottom: calc(90vh - 432px);
+}
+.signUpPage {
+  min-height: calc(600px + 10vh);
+}
 .logIn,
 .signUp {
   width: 80vw;
   height: 400px;
   display: flex;
   align-items: center;
-  margin: 5vh 5vw;
   box-shadow: 0 0 10px #00000031;
   column-gap: 20px;
   padding: 5vh 5vw;
+  background-color: var(--b1--);
+}
+.leftSide h1 {
+  color: var(--g2--);
 }
 .leftSide form,
 .leftSide {
@@ -553,12 +603,19 @@ footer .foot svg {
   border: 1px solid #00000031;
   overflow: hidden;
 }
+.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-MJoBVe {
+  background-color: black;
+}
+.leftSide form label {
+  color: var(--g2--);
+  font-weight: bold;
+}
 .leftSide form::after {
   position: absolute;
   content: "";
   width: 100%;
   height: 1px;
-  background-color: #00000031;
+  background-color: var(--g3--);
   top: -15px;
 }
 .leftSide form::before {
@@ -567,9 +624,9 @@ footer .foot svg {
   content: "OR";
   left: 50%;
   transform: translate(-50%);
-  color: #00000031;
+  color: var(--g3--);
   z-index: 2;
-  background-color: var(--white--);
+  background-color: var(--b1--);
 }
 .leftSide form {
   position: relative;
@@ -580,22 +637,26 @@ footer .foot svg {
   width: 100%;
   height: 30px;
   border: none;
-  border-left: 2px solid var(--g3--);
-  color: var(--b2--);
+  border-left: 2px solid var(--b2--);
+  color: var(--b1--);
   margin: 5px 0;
+  border-radius: 5px;
+  background-color: #f5f5f5;
 }
 .leftSide form input[type="submit"] {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
+  color: var(--g3--);
+  font-size: 16px;
 }
 .leftSide a {
   font-weight: bold;
-  color: var(--g3--);
+  color: var(--g2--);
 }
 .leftSide p {
-  color: #00000061;
+  color: var(--g3--);
 }
 .logIn .rightSide {
   width: calc(40vw - 10px);

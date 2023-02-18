@@ -11,10 +11,10 @@ export function HeadGlobal(){
                 <h1>EgyTour</h1>
             </div>
             <ul>
-                <li><a href="/" className='activePage'>Home</a></li>
-                <li><a href="#Trips">Discover</a></li>
-                <li><a href="#Footer">Contact Us</a></li>
-                <li><a href="#AboutUs">AboutUs</a></li>
+                <li><Link to="/" className='activePage'>Home</Link></li>
+                <li><Link to="/discover">Discover</Link></li>
+                <li><a href="/#AboutUs">Contact Us</a></li>
+                <li><a href="/#Footer">AboutUs</a></li>
             </ul>
             <div className="signIn">
                 <Link to='/log in' className='button'>Log In</Link>

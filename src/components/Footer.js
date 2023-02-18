@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlane,faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp,faFacebook,faGithub,faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';
+import { Link } from "react-router-dom";
 
 export function Footer(){
     return(
@@ -19,7 +20,7 @@ export function Footer(){
                     <ul>
                         <li><a href="#AboutUs">About Us</a></li>
                         <li><a href="#Footer">Contact Us</a></li>
-                        <li><a href='#Trips'>Services</a></li>
+                        <li><Link to='/discover'>Services</Link></li>
                     </ul>
                 </div>
                 <div>

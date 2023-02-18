@@ -90,7 +90,7 @@ export function Header(){
                 }}>Number of tickets</p>
                 </li>
                 <li>
-                    <Link to={'/search'}>
+                    <Link to={'/discover'}>
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
                     </Link>
                 </li>

@@ -28,6 +28,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/* in trips section in main page */
+/* for display items */
+.displayFlex {
+  display: flex !important;
+}
+/* for hide items */
+.displayNone {
+  display: none !important;
+}
+/* end of road */
+.disable {
+  color: var(--b1--);
+  background-color: var(--g1--) !important;
+  cursor: default !important;
+}
+
+/* //////////////////// */
 .logo {
   display: flex;
   color: var(--g3--);

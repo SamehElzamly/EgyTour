@@ -17,9 +17,9 @@ function App() {
     const dispatch=useDispatch();
     let api='http://localhost:3001/trips'
     useEffect(()=>{
-        fetch(api)
-        .then(res=> {return res.json()})
-        .then(res=>{
+         fetch(api)
+         .then(res=> {return res.json()})
+         .then(res=>{
             dispatch(addTrips(res))
         }
             )
@@ -44,6 +44,8 @@ function App() {
                 // header change on scrool
                 const header =document.querySelector('header header')
                 const headerInfo=document.querySelector('.header .headerInfo')
+                const links=document.querySelectorAll('#header ul li a')
+
                 window.onscroll = function() {
                 if (this.pageYOffset >10) {
                     header.classList.add("fixedHeader");
@@ -53,8 +55,33 @@ function App() {
                     headerInfo.classList.remove('staticHeaderInfo')
                     header.classList.remove("fixedHeader");
                 }
+                /////////////////// 
+              // avtive section change on scrool
+              if(this.pageYOffset>330&&this.pageYOffset<900){
+                links.forEach(e=>{
+                  e.classList.remove('activePage')
+                })
+                links[1].classList.add('activePage')
+              }
+              else if(this.pageYOffset>900&&this.pageYOffset<1680){
+                links.forEach(e=>{
+                  e.classList.remove('activePage')
+                })
+                links[2].classList.add('activePage')
+              }
+              else if(this.pageYOffset>1680){
+                links.forEach(e=>{
+                  e.classList.remove('activePage')
+                })
+                links[3].classList.add('activePage')
+              }
+              else{
+                links.forEach(e=>{
+                  e.classList.remove('activePage')
+                })
+                links[0].classList.add('activePage')
+              }
                 }
-              /////////////////// 
               }}>
                 <Trips/>
               <AboutUs/>
@@ -63,9 +90,15 @@ function App() {
           </div>
         </>
       }/>
-      <Route path='/search' element={<Search/>}/>
-      <Route path='/log in' element={<LogIn/>} />
-      <Route path='/sign up' element={<SignUp/>} />
+      <Route path='/discover' element={<Search/>}/>
+      <Route path='/log in' element={      <div className='logInPage'>
+        <LogIn/>
+      </div>} />
+      <Route path='/sign up' element={
+      <div className='signUpPage'>
+        <SignUp/>
+      </div>
+} />
     </Routes>
   );
 }
