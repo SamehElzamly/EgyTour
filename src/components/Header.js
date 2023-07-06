@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 export function Header(){
     const [i,setIValue]=useState(1)
     const [v,setvValue]=useState(1)
-    const trips=useSelector(state=>state.tripsSlice)
+    const trips=useSelector(state=>state.reducer.tripsSlice)
 
     function travelersNum(){
         if(i%2===0)
@@ -60,34 +60,25 @@ export function Header(){
         <div className="navbar">
             <ul>
                 <li>
-                    {tripInfo()}
-                    <div onClick={()=>{
-                    setvValue(v+1)
-                }}>
+                    <div>
                         <FontAwesomeIcon icon={faLocationDot} />
                         <p>Trip</p>
                     </div>
-                    <p onClick={()=>{
-                    setvValue(v+1)
-                }}>Choose a trip</p>
+                    <p>Choose a trip</p>
                 </li>
                 <li>
-                    <label htmlFor="date">Dates</label>
-                    <input type='date' id="date" name="date"/>
+                    <div>
                     <FontAwesomeIcon icon={faCalendarDays}/>                    
+                    <p>Dates</p>
+                    </div>
                     <p>Choose a date</p>
                 </li>
                 <li>
-                    {travelersNum()}
-                    <div onClick={()=>{
-                    setIValue(i+1)
-                }}>
+                    <div>
                         <FontAwesomeIcon icon={faUsers} />
                         <p>Travelers</p>
                     </div>
-                    <p onClick={()=>{
-                    setIValue(i+1)
-                }}>Number of tickets</p>
+                    <p>Number of tickets</p>
                 </li>
                 <li>
                     <Link to={'/discover'}>

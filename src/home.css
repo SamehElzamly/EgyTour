@@ -27,21 +27,35 @@ ul li a {
 .signIn {
   z-index: 2;
   display: flex;
+
+  align-items: center;
+}
+.signIn > * {
+  margin: 0 4px;
+}
+.signIn img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.signIn .button {
+  height: 20px;
+  border: none;
+  color: var(--white--);
+  background-color: var(--g3--);
+}
+.signIn svg {
+  color: var(--b1--);
+  font-size: 20px;
+}
+#header .button:first-child {
+  color: var(--g3--);
+  background-color: #f5f5f5;
 }
 button,
 .button {
   padding: 10px 20px;
   margin: 0 4px;
-}
-#header .button:first-child {
-  color: var(--white--);
-  background-color: var(--g3--);
-  border: none;
-}
-#header .button:last-child {
-  color: var(--g3--);
-  background-color: #f5f5f5;
-  border: none;
 }
 .header > span {
   background-image: url("./public/images/mobile.jpg");
@@ -138,38 +152,6 @@ button,
   box-shadow: 0 0 15px #00000061;
 }
 
-.header .navbar li:nth-child(2) input {
-  position: absolute;
-  transform: translate(-17%, 12px) scale(4, 2);
-  height: 22px;
-  border: none;
-  opacity: 0;
-  width: 26px;
-  font-size: 22px;
-}
-.header .navbar li input,
-.header .navbar select {
-  position: absolute;
-  border-radius: 5px;
-  height: 30px;
-  width: 100px;
-  transform: translateY(-100%);
-  border: 1px solid var(--g1--);
-  color: #00000061;
-  z-index: 3;
-}
-.header .navbar li:nth-child(3) input:focus-within {
-  border: 1px solid var(--g1--);
-}
-.header .navbar label {
-  position: relative;
-  left: 19px;
-  font-weight: bold;
-}
-.header .navbar .fa-calendar-days {
-  position: absolute;
-  left: 0;
-}
 .header .navbar svg {
   color: var(--g3--);
 }
@@ -544,6 +526,7 @@ footer .foot svg {
   bottom: 10px;
   right: 20px;
 }
+
 .searchPage .card form input {
   height: 25px;
   width: -webkit-fill-available;
@@ -638,7 +621,7 @@ footer .foot svg {
   height: 30px;
   border: none;
   border-left: 2px solid var(--b2--);
-  color: var(--b1--);
+  color: var(--b2--);
   margin: 5px 0;
   border-radius: 5px;
   background-color: #f5f5f5;
@@ -682,4 +665,74 @@ footer .foot svg {
   background-repeat: no-repeat;
   background-position: center;
 }
-/* end signup page styles */ ;
+/* end signup page styles */
+/* start profile page styles*/
+#Profile .profileBody {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  grid-template-rows: auto;
+}
+#Profile nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#Profile nav > * {
+  margin: 30px 0;
+}
+.profilePhoto {
+  color: #00000061;
+  border: 2px solid #00000061;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.profilePhoto svg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  font-size: 125px;
+}
+.profilePhoto::after {
+  content: "change";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #00000061;
+  color: var(--white--);
+  width: 100%;
+  padding-bottom: 10px;
+  text-align: center;
+}
+#Profile nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  padding: 0;
+}
+#Profile nav ul li {
+  margin-bottom: 10px;
+}
+#Profile nav ul li .active {
+  color: var(--b1--);
+}
+#Profile #MyTrips {
+  height: 100%;
+}
+#Profile .noOldTrips,
+.noFavTrips,
+.rootPortfolio {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-weight: bold;
+  font-size: 25px;
+}
+/* end profile page styles*/

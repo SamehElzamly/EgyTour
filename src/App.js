@@ -3,41 +3,44 @@ import {Trips} from './components/Trips'
 import { AboutUs } from './components/AboutUs';
 import { Footer } from './components/Footer';
 import './home.css';
-import { Routes,Route } from 'react-router-dom';
+import { Routes,Route, Navigate, Outlet } from 'react-router-dom';
 import { Search } from './components/Search';
-import { useDispatch,useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { addTrips } from './store/tripsSlice';
+import { useSelector,useDispatch } from 'react-redux';
 import { LogIn } from './components/LogIn';
 import { SignUp } from './components/SignUp';
-
+import { FavTrips } from './components/profile/FavTrips';
+import { useEffect } from 'react';
+import { fetchUsers } from './store/users';
+import { fetchTrips } from './store/tripsSlice';
+import { ProfileNav } from './components/Profile';
+import { HeadGlobal } from './components/HeadGlobal';
+import { MyTrips } from './components/profile/MyTrips';
+import { PaymentHistory } from './components/profile/paymentHistory';
 
 function App() {
-  // load trips from api
-    const dispatch=useDispatch();
-    let api='http://localhost:3001/trips'
-    useEffect(()=>{
-         fetch(api)
-         .then(res=> {return res.json()})
-         .then(res=>{
-            dispatch(addTrips(res))
-        }
-            )
-        .catch(err=>console.log(err))
-    },[])
-  //add trip to favourite
-  let trips=document.querySelectorAll('.card svg:nth-child(3)')
-  trips.forEach(e=>{
-    e.addEventListener('click',()=>{
-      e.classList.toggle('favouriteTrip')
+  const user=useSelector(state=>state.reducer.fetchUserData)
+  const dispatch=useDispatch();
+  // const mainTrips=useSelector(state=>state.reducer.tripsSlice)
+  useEffect(()=>{
+    dispatch(fetchUsers())
+    dispatch(fetchTrips())
     })
-  })
+  setTimeout(addToFav(),1000)
+  function addToFav(trip){
+    const icons=document.querySelectorAll('.card svg:nth-child(3)')
+    icons.forEach((icon,i)=>{
+      icon.addEventListener('click',()=>{
+
+      })
+    })
+  }
+
   return (
     <Routes>
       <Route path='/' element={
         <>
           <div className="container">
-            <header className="header">
+            <header className="header" id='Home'>
               <Header/>
             </header>
               <section onLoad={()=>{
@@ -67,13 +70,13 @@ function App() {
                 links.forEach(e=>{
                   e.classList.remove('activePage')
                 })
-                links[2].classList.add('activePage')
+                links[3].classList.add('activePage')
               }
               else if(this.pageYOffset>1680){
                 links.forEach(e=>{
                   e.classList.remove('activePage')
                 })
-                links[3].classList.add('activePage')
+                links[4].classList.add('activePage')
               }
               else{
                 links.forEach(e=>{
@@ -91,14 +94,40 @@ function App() {
         </>
       }/>
       <Route path='/discover' element={<Search/>}/>
-      <Route path='/log in' element={      <div className='logInPage'>
-        <LogIn/>
-      </div>} />
+      <Route path='/fav trips' element={<FavTrips/>}/>
+      <Route path='/log in' element={
+          //       user[0]?(
+          // <Navigate replace to={'/'}/>
+      // ):
+        (<div className='logInPage'>
+          <LogIn/>
+        </div>)
+      } />
       <Route path='/sign up' element={
-      <div className='signUpPage'>
+      //   user[0]?(
+      //     <Navigate replace to={'/'}/>
+      // ):
+      (<div className='signUpPage'>
         <SignUp/>
-      </div>
+      </div>)
 } />
+<Route path='/:userId' element={
+  <>
+    <HeadGlobal/>
+    <div id="Profile">
+      <div className="profileBody">
+        <ProfileNav/>
+        <Outlet/>
+      </div>
+    </div>
+    <Footer/>
+  </>
+  }>
+    <Route path='' element={<h1 className='rootPortfolio'>Welcome {user[0].firstName}</h1>}/>
+  <Route path='myTrips' element={<MyTrips/>}/>
+  <Route path='paymentHistory' element={<PaymentHistory/>}/>
+  <Route path='favTrips'element={<FavTrips/>}/>
+</Route>
     </Routes>
   );
 }

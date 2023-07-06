@@ -3,21 +3,20 @@ import { TripsCards } from "./TripsCards";
 import {useState} from 'react';
 import { useSelector } from "react-redux";
 import { HeadGlobal } from './HeadGlobal';
-
+import { useEffect } from 'react';
 
 
 export function Search(){
     const [filtered,setFiltered]=useState([])
-    const trips=useSelector(state=>state.tripsSlice)
-
-    setTimeout(()=>{
+    const trips=useSelector(state=>state.reducer.getTrips)
+    useEffect(()=>{
             setFiltered(trips)
             const links=document.querySelectorAll('#header ul li a')
             links.forEach(e=>{
                 e.classList.remove('activePage')
             })
             links[1].classList.add('activePage')
-    },0)
+    },[])
 
 
     return(

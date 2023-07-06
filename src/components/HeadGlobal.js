@@ -1,25 +1,59 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faPlane} from '@fortawesome/free-solid-svg-icons'
+import { faPlane,faUser } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
-export function HeadGlobal(){
-    return(
-        <header id='header'>
-            <div className='logo' onClick={()=>{
-                window.location.assign('/')
-            }}>
-                <FontAwesomeIcon icon={faPlane}/>
-                <h1>EgyTour</h1>
+import { useEffect, useState } from 'react'
+export function HeadGlobal() {
+
+const[loggedIn,setLoggedIn]=useState(false)
+
+    const logIn=()=>{
+        if(loggedIn){
+            return (
+            <div className="signIn">
+                {/* <img src={user[0].picture} alt={user[0].name}></img> */}
+                <Link to={'/'} className='button' onClick={()=>{
+                    localStorage.setItem("case","logedOut");
+                    localStorage.removeItem("id");
+                    window.location.href='/'
+                }}>Logout</Link>
+                <Link to={`/${window.localStorage.getItem('id')}`}>
+                    <FontAwesomeIcon icon={faUser} />
+                </Link>
             </div>
-            <ul>
-                <li><Link to="/" className='activePage'>Home</Link></li>
-                <li><Link to="/discover">Discover</Link></li>
-                <li><a href="/#AboutUs">Contact Us</a></li>
-                <li><a href="/#Footer">AboutUs</a></li>
-            </ul>
+            )
+        }
+        else{
+            return (
             <div className="signIn">
                 <Link to='/log in' className='button'>Log In</Link>
                 <Link to='/sign up' className='button'>Sign Up</Link>
             </div>
+                )
+        }
+    }
+
+    useEffect(()=>{
+        if(localStorage.getItem('case')==="logedIn")
+            setLoggedIn(true)
+        else
+            setLoggedIn(false)
+    },[])
+    return (
+        <header id='header'>
+            <div className='logo' onClick={() => {
+                window.location.assign('/')
+            }}>
+                <FontAwesomeIcon icon={faPlane} />
+                <h1>EgyTour</h1>
+            </div>
+            <ul>
+                <li><a href="/#Home" className='activePage'>Home</a></li>
+                <li><Link to="/discover">Discover</Link></li>
+                <li><Link to="/fav trips">Favourite</Link></li>
+                <li><a href="/#AboutUs">AboutUs</a></li>
+                <li><a href="/#Footer">Contact Us</a></li>
+            </ul>
+            {logIn()}
         </header>
-        )
+    )
 }

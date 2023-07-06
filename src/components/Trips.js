@@ -1,12 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faLocationDot,faChevronDown,faArrowRight,faArrowLeft,faVanShuttle,faPlane,faShip} from '@fortawesome/free-solid-svg-icons';
 import {faHeart} from '@fortawesome/free-regular-svg-icons'
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { fetchSpeTrips } from "../store/tripsSlice";
 
 
 export function Trips(){
-    const trips=useSelector(state=>state.tripsSlice)
+
+    const trips=useSelector(state=>state.reducer.getTrips)
+    const dispatch=useDispatch()
     const travelWay=(type)=>{
         if(type==="plane")
         return <FontAwesomeIcon icon={faPlane}/>
@@ -14,6 +17,11 @@ export function Trips(){
         return <FontAwesomeIcon icon={faVanShuttle}/>
         else 
         return <FontAwesomeIcon icon={faShip}/>
+    }
+
+    //function to change value of tha p that hold location
+    const location=(ele)=>{
+        document.getElementById('tripsLoc').innerText=ele.target.getAttribute('data-value')
     }
 
     let i=0
@@ -30,14 +38,29 @@ export function Trips(){
                     document.querySelector('#Trips .tripsHead ul').classList.remove('displayFlex')
                 }}>
                     <FontAwesomeIcon icon={faLocationDot}/>
-                    <p data-value='All'>All</p>
+                    <p data-value='All' id="tripsLoc">All</p>
                     <FontAwesomeIcon icon={faChevronDown}/>
                     <ul>
-                        <li><p data-value='Luxor'>Luxor</p></li>
-                        <li><p data-value='Cairo'>Cairo</p></li>
-                        <li><p data-value='Aswan'>Aswan</p></li>
-                        <li><p data-value='Sharm Elsheikh'>Sharm Elsheikh</p></li>
-                        <li><p data-value='Outside Egypt'>Outside Egypt</p></li>
+                        <li onClick={(e)=>{
+                            dispatch(fetchSpeTrips(' '))
+                            location(e)
+                        }}><p data-value='All'>All</p></li>
+                        <li onClick={(e)=>{
+                            dispatch(fetchSpeTrips('luxor'))
+                            location(e)
+                        }}><p data-value='Luxor'>Luxor</p></li>
+                        <li onClick={(e)=>{
+                            dispatch(fetchSpeTrips('cairo'))
+                            location(e)
+                        }}><p data-value='Cairo'>Cairo</p></li>
+                        <li onClick={(e)=>{
+                            dispatch(fetchSpeTrips('sinai'))
+                            location(e)
+                        }}><p data-value='Sinai'>Sinai</p></li>
+                        <li onClick={(e)=>{
+                            dispatch(fetchSpeTrips('jurdon'))
+                            location(e)
+                        }}><p data-value='Outside Egypt'>Outside Egypt</p></li>
                     </ul>
                 </div>
                 <div>
@@ -55,7 +78,6 @@ export function Trips(){
                         else{
                             i=i+1
                         }
-                        console.log(i);
                         document.querySelector('#Trips .tripsHead div:last-child svg:last-child').classList.remove('disable')
                         cards[i-1].classList.add('displayNone')
                     }}/>
@@ -73,7 +95,6 @@ export function Trips(){
                         else{
                             i=i-1
                         }
-                        console.log(i);
                         document.querySelector('#Trips .tripsHead div:last-child svg:first-child').classList.remove('disable')
                         cards[i].classList.remove('displayNone')
                     }}/>
@@ -89,7 +110,7 @@ export function Trips(){
                                 <FontAwesomeIcon icon={faHeart}/>
                                 <div>
                                         <h3>{trip.name}</h3>
-                                        <h3>{trip.price}</h3>
+                                        <h3>{trip.price}$</h3>
                                 </div>
                 </div>
                         );

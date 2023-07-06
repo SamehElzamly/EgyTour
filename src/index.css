@@ -28,6 +28,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/* add to favourite */
+.favTrip {
+  background-color: var(--g3--) !important;
+}
+/* //// */
+form p {
+  display: none;
+}
+/* warninig */
+.warning {
+  color: red !important;
+  display: block !important;
+  font-size: 14px;
+  margin: 0;
+  font-weight: normal;
+}
+/* ////// */
 /* in trips section in main page */
 /* for display items */
 .displayFlex {
@@ -43,7 +60,6 @@ code {
   background-color: var(--g1--) !important;
   cursor: default !important;
 }
-
 /* //////////////////// */
 .logo {
   display: flex;
